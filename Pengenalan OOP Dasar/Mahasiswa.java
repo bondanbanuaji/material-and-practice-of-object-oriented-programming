@@ -1,28 +1,60 @@
-public class Mahasiswa {
-    String nama;
-    long nim;
-    String jurusan;
-    long angkatan;
+//encapsulation syntax 
 
-    public Mahasiswa(String nama, int nim, String jurusan, int angkatan) {
+public class Mahasiswa {
+    private String nama;
+    private long nim;
+    private String jurusan;
+    private long angkatan;
+
+    public Mahasiswa(String nama, String nim, String jurusan, String angkatan) {
         this.nama = nama;
-        this.nim = nim;
+        this.nim = Long.parseLong(nim);
         this.jurusan = jurusan;
+        this.angkatan = Long.parseLong(angkatan);
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public long getNim(){
+        return nim;
+    }
+
+    public void setNim(long nim) {
+        this.nim = nim;
+    }
+
+    public String getJurusan() {
+        return jurusan;
+    }
+
+
+    public void setJurusan(String jurusan) {
+        this.jurusan = jurusan;
+    }
+
+    public long getAngkatan() {
+        return angkatan;
+    }
+
+    public void setAngkatan(int angkatan) {
         this.angkatan = angkatan;
     }
-    
-    public void tampilkanIdentitasMahasiswa() {
-        System.out.println("================================");
-        System.out.println("Identitas Mahasiswa");
-        System.out.println("\nNama: " + nama);
-        System.out.println("\nNIM: " + nim);
-        System.out.println("\nJurusan: " + jurusan);
-        System.out.println("\nAngkatan: " + angkatan);
-        System.out.println("================================");
+
+    public String toString() {
+        return "\nNama: " + nama + " \nNIM: " + nim + " \nJurusan: " + jurusan + " \nAngkatan: " + angkatan; 
     }
 
     public static void main(String[] args) {
-        Mahasiswa mhs1 = new Mahasiswa("Bondan Banuaji", 231351030, "Teknik Informatika", 23);
-        mhs1.tampilkanIdentitasMahasiswa();
+        Mahasiswa mhs = new Mahasiswa("Boba", "666", "Informatika", "23");
+        System.out.println("Data Mahasiswa");
+        System.out.println("==============================");
+        System.out.println(mhs);
+        System.out.println("\n==============================");
     }
 }
